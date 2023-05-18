@@ -10,11 +10,22 @@ const BodyContainer = styled.table `
 const CenterContainer = styled.th `
     text-align: center;
     padding: 5px 10px;
-
 `
-const InformationContainer = styled.tr`
+const InformationContainer = styled.tr `
     text-align: center;
+    &:nth-child(even){
+        background-color: #f2f2f2;
+    }
 `
+
+const pivot_table_1 = [
+    {pivot_table_1: 6},
+    {pivot_table_1: 5},
+    {pivot_table_1: 30},
+    {pivot_table_1: 94},
+    {pivot_table_1: 1},
+    {pivot_table_1: 0},
+]
 
 function TabelaDeInformacoes() {
     return (
@@ -35,20 +46,20 @@ function TabelaDeInformacoes() {
             </thead>
             <tbody>
                 <InformationContainer>
-                    <td>1</td>
-                    <td>João</td>
-                    <td>TI</td>
-                    <td>Infra</td>
-                    <td>Estação 1</td>
-                    <td>Em atendimento</td>
+                    {pivot_table_1
+                        .sort((a, b) => a.pivot_table_1 - b.pivot_table_1) // Ordena o array com base no valor da propriedade pivot_table_1
+                        .map((obj) => (
+                            <td key={obj.pivot_table_1}>{obj.pivot_table_1}</td>
+                        ))
+                    }
                 </InformationContainer>
                 <InformationContainer>
-                    <td>2</td>
-                    <td>Maria</td>
-                    <td>TI</td>
-                    <td>Infra</td>
-                    <td>Estação 2</td>
-                    <td>Em atendimento</td>
+                    {pivot_table_1
+                        .sort((a, b) => b.pivot_table_1 - a.pivot_table_1) // Ordena o array com base no valor da propriedade pivot_table_1
+                        .map((obj) => (
+                            <td key={obj.pivot_table_1}>{obj.pivot_table_1}</td>
+                        ))
+                    }
                 </InformationContainer>
             </tbody>
         </BodyContainer>

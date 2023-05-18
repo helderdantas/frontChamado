@@ -27,7 +27,7 @@ function OpcoesHeader() {
     <Opcoes>
       { textoOpcoes.map( (textoOpcoes,index) => (
         <Opcao key={index}>
-            <p>{textoOpcoes.texto}</p>
+            <button>{textoOpcoes.texto}</button>
         </Opcao>
       ) ) }
     </Opcoes>

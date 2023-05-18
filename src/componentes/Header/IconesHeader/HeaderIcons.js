@@ -1,6 +1,6 @@
 import perfil from '../../../imagens/perfil.svg'
-import sacola from '../../../imagens/sacola.svg'
 import styled  from 'styled-components';
+
 
 const Icone = styled.li `
     display: flex;
@@ -12,18 +12,10 @@ const Icones = styled.ul `
     aling-items: center;
 `
 
-
-const icons = [
-    {icon: perfil},
-    {icon:sacola},
-];
-
 function IconesHeader() {
     return (
         <Icones>
-            { icons.map( (icon) => (
-            <Icone key={icon.icon}><img src={icon.icon} alt='IconesHeader'></img></Icone>
-            ) ) }
+            <Icone><img src={perfil} alt='IconesHeader'></img></Icone>
         </Icones>
     )
 }
