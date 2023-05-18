@@ -1,4 +1,4 @@
-import logo from '../../../imagens/logo.svg';
+import logo from '../../../imagens/logotipoSeec.png';
 import styled from 'styled-components';
 
 const LogoContainer = styled.div `
@@ -17,7 +17,7 @@ function Logo() {
         alt='Logo' />
       <p>
         <strong>
-          React
+          Chamados SEEC - Secretaria de Estado da Educação, da Cultura, do Esporte e do Lazer do Rio Grande do Norte
         </strong>
       </p>
     </LogoContainer>

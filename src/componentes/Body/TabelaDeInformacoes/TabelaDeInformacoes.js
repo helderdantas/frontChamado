@@ -13,8 +13,7 @@ const CenterContainer = styled.th `
 
 `
 const InformationContainer = styled.tr`
-    background-color: #f3f3f3;
-    border-bottom: 1px solid #fff;
+    text-align: center;
 `
 
 function TabelaDeInformacoes() {
@@ -43,14 +42,14 @@ function TabelaDeInformacoes() {
                     <td>Estação 1</td>
                     <td>Em atendimento</td>
                 </InformationContainer>
-                <tr>
+                <InformationContainer>
                     <td>2</td>
                     <td>Maria</td>
                     <td>TI</td>
                     <td>Infra</td>
                     <td>Estação 2</td>
                     <td>Em atendimento</td>
-                </tr>
+                </InformationContainer>
             </tbody>
         </BodyContainer>
 
