@@ -7,6 +7,7 @@ const HeaderContainer = styled.header `
   background-color: white;
   display: flex;
   justify-content: space-around;
+  margin: auto;
 `
 
 

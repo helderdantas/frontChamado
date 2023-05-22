@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-
 const BodyContainer = styled.table `
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.0.15);
     fint-family: sans-serif;
@@ -33,7 +32,7 @@ function TabelaDeInformacoes() {
 <BodyContainer>
             <thead>
                 <tr>
-                    <CenterContainer colSpan={6}>CHAMADOS NÃO FINALIZADOS</CenterContainer>
+                    <CenterContainer colSpan={6}>CHAMADOS</CenterContainer>
                 </tr>
                 <tr>
                     <CenterContainer>Código</CenterContainer>

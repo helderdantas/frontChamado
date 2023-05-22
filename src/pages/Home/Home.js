@@ -1,11 +1,13 @@
 import TabelaDeInformacoes from './TabelaDeInformacoes/TabelaDeInformacoes';
+import Header from '../../componentes/Header/Header';
 
-function Body() {
+function Home() {
   return (
     <div>
+        <Header/>
         <TabelaDeInformacoes />
     </div>
   );
 }
 
-export default Body;
+export default Home;

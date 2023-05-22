@@ -3,10 +3,15 @@ import styled from 'styled-components';
 
 const LogoContainer = styled.div `
   display: flex;
-  font-size: 30px;
+  font-size: 25px;
 `
 const LogoImage = styled.img `
+  width: 125px;
   margin-right: 10px;
+`
+
+const LogoText = styled.p `
+  text-align: junstify;
 `
 
 function Logo() {
@@ -15,11 +20,11 @@ function Logo() {
       <LogoImage 
         src={logo} 
         alt='Logo' />
-      <p>
+      <LogoText>
         <strong>
-          Chamados SEEC - Secretaria de Estado da Educação, da Cultura, do Esporte e do Lazer do Rio Grande do Norte
+          Sistema de Gerenciamento de Chamados
         </strong>
-      </p>
+      </LogoText>
     </LogoContainer>
   )
 }

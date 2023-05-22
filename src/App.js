@@ -1,5 +1,4 @@
-import Header from './componentes/Header/Header'
-import Body from './componentes/Body/Body'
+import Home from './pages/Home/Home';
 import styled from 'styled-components'
 
 
@@ -17,8 +16,7 @@ const AppContainer = styled.div `
 function App() {
   return (
     <AppContainer>
-      <Header />
-      <Body />
+      <Home />
     </AppContainer>
   );
 }

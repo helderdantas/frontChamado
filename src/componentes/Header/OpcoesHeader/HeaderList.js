@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const Opcao = styled.li `
   font-size: 16px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around ;
   align-items: center;
   text-align: center;
   height: 100%;
@@ -13,13 +13,16 @@ const Opcao = styled.li `
 `
 
 const Opcoes = styled.ul `
+  margin: auto;
   display: flex;
 `
 
+const Button = styled.button `
+`
+
 const textoOpcoes = [
-  {texto: 'Home'},
-  {texto: 'Sobre'},
-  {texto: 'Contato'},
+  {texto: 'Gerar Relatório'},
+  {texto: 'Abrir Chamado'},
 ];
 
 function OpcoesHeader() {
@@ -27,7 +30,7 @@ function OpcoesHeader() {
     <Opcoes>
       { textoOpcoes.map( (textoOpcoes,index) => (
         <Opcao key={index}>
-            <button>{textoOpcoes.texto}</button>
+            <Button>{textoOpcoes.texto}</Button>
         </Opcao>
       ) ) }
     </Opcoes>
