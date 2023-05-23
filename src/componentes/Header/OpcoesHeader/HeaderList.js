@@ -18,6 +18,9 @@ const Opcoes = styled.ul `
 `
 
 const Button = styled.button `
+  border-radius: 10px;
+  background-color: #F2F2F2;
+  color: black;
 `
 
 const textoOpcoes = [

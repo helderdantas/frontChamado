@@ -9,14 +9,18 @@ const HeaderContainer = styled.header `
   justify-content: space-around;
   margin: auto;
 `
-
+const Opcoes = styled.div `
+  display: flex;
+`
 
 function Header () {
     return (
         <HeaderContainer>
           <Logo />
-          <OpcoesHeader />
-          <IconesHeader />
+          <Opcoes>
+            <OpcoesHeader />
+            <IconesHeader />
+          </Opcoes>
         </HeaderContainer>
     )
 }
