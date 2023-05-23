@@ -8,7 +8,6 @@ const Opcao = styled.li `
   text-align: center;
   height: 100%;
   padding: 0 5px;
-  cursor: pointer;
   min-width: 120px;
 `
 
@@ -18,6 +17,7 @@ const Opcoes = styled.ul `
 `
 
 const Button = styled.button `
+  cursor: pointer;
   border-radius: 10px;
   background-color: #F2F2F2;
   color: black;

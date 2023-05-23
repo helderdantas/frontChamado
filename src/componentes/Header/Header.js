@@ -4,7 +4,7 @@ import IconesHeader from './IconesHeader/HeaderIcons'
 import styled from 'styled-components'
 
 const HeaderContainer = styled.header `
-  background-color: white;
+  background-color: #dedddd;
   display: flex;
   justify-content: space-around;
   margin: auto;

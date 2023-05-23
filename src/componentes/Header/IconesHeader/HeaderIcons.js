@@ -3,6 +3,7 @@ import styled  from 'styled-components';
 
 
 const Icone = styled.li `
+    cursor: pointer;
     display: flex;
     margin-right: 40px;
     width: 25px;
