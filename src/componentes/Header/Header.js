@@ -8,6 +8,10 @@ const HeaderContainer = styled.header `
   display: flex;
   justify-content: space-around;
   margin: auto;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `
 const Opcoes = styled.div `
   display: flex;

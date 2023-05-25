@@ -4,10 +4,12 @@ import Body from '../../componentes/Body/Body';
 
 function Home() {
   return (
-    <Body>
-        <Header/>
-        <TabelaDeInformacoes />
-    </Body>
+    <>
+      <Header />
+      <Body>
+          <TabelaDeInformacoes />
+      </Body>
+    </>
   );
 }
 

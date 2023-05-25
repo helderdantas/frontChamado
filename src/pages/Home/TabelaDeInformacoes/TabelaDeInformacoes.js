@@ -5,6 +5,10 @@ const BodyContainer = styled.table `
     fint-family: sans-serif;
     margin: 50px auto;
     border-collapse: collapse;
+    @media (max-width: 768px) {
+        width: 90%;
+        height: 90%;
+    }
 `
 const CenterContainer = styled.th `
     text-align: center;
@@ -29,7 +33,7 @@ const pivot_table_1 = [
 function TabelaDeInformacoes() {
     return (
 
-<BodyContainer>
+        <BodyContainer>
             <thead>
                 <tr>
                     <CenterContainer colSpan={6}>CHAMADOS</CenterContainer>

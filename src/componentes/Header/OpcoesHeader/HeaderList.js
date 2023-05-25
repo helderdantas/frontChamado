@@ -1,19 +1,19 @@
 import styled from 'styled-components';
 
+const Opcoes = styled.ul `
+  margin: auto;
+  display: flex;
+  @media (max-width: 768px) {
+    display: none;
+  }
+`
 const Opcao = styled.li `
   font-size: 16px;
   display: flex;
   justify-content: space-around ;
   align-items: center;
   text-align: center;
-  height: 100%;
   padding: 0 5px;
-  min-width: 120px;
-`
-
-const Opcoes = styled.ul `
-  margin: auto;
-  display: flex;
 `
 
 const Button = styled.button `

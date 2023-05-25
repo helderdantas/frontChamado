@@ -4,6 +4,9 @@ import styled from 'styled-components';
 const LogoContainer = styled.div `
   display: flex;
   font-size: 25px;
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
 `
 const LogoImage = styled.img `
   width: 125px;
