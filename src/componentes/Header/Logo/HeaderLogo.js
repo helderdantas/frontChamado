@@ -1,27 +1,28 @@
 import logo from '../../../imagens/logotipoSeec.png';
 import styled from 'styled-components';
 
-const LogoContainer = styled.div `
+const LogoContainer = styled.div`
   display: flex;
   font-size: 25px;
   @media (max-width: 768px) {
     font-size: 20px;
   }
 `
-const LogoImage = styled.img `
+const LogoImage = styled.img`
   width: 125px;
   margin-right: 10px;
 `
 
-const LogoText = styled.p `
+const LogoText = styled.p`
   text-align: junstify;
+  padding-top: 7%;
 `
 
 function Logo() {
   return (
     <LogoContainer>
-      <LogoImage 
-        src={logo} 
+      <LogoImage
+        src={logo}
         alt='Logo' />
       <LogoText>
         <strong>

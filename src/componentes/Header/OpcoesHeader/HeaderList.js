@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
-const Opcoes = styled.ul `
+const Opcoes = styled.ul`
   margin: auto;
   display: flex;
   @media (max-width: 768px) {
     display: none;
   }
 `
-const Opcao = styled.li `
+const Opcao = styled.li`
   font-size: 16px;
   display: flex;
   justify-content: space-around ;
@@ -16,7 +16,7 @@ const Opcao = styled.li `
   padding: 0 5px;
 `
 
-const Button = styled.button `
+const Button = styled.button`
   cursor: pointer;
   border-radius: 10px;
   background-color: #F2F2F2;
@@ -24,18 +24,18 @@ const Button = styled.button `
 `
 
 const textoOpcoes = [
-  {texto: 'Gerar Relatório'},
-  {texto: 'Abrir Chamado'},
+  { texto: 'Gerar Relatório' },
+  { texto: 'Abrir Chamado' },
 ];
 
 function OpcoesHeader() {
   return (
     <Opcoes>
-      { textoOpcoes.map( (textoOpcoes,index) => (
+      {textoOpcoes.map((textoOpcoes, index) => (
         <Opcao key={index}>
-            <Button>{textoOpcoes.texto}</Button>
+          <Button>{textoOpcoes.texto}</Button>
         </Opcao>
-      ) ) }
+      ))}
     </Opcoes>
   );
 }

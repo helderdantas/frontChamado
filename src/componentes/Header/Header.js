@@ -3,7 +3,7 @@ import OpcoesHeader from './OpcoesHeader/HeaderList'
 import IconesHeader from './IconesHeader/HeaderIcons'
 import styled from 'styled-components'
 
-const HeaderContainer = styled.header `
+const HeaderContainer = styled.header`
   background-color: #dedddd;
   display: flex;
   justify-content: space-around;
@@ -13,20 +13,20 @@ const HeaderContainer = styled.header `
     align-items: center;
   }
 `
-const Opcoes = styled.div `
+const Opcoes = styled.div`
   display: flex;
 `
 
-function Header () {
-    return (
-        <HeaderContainer>
-          <Logo />
-          <Opcoes>
-            <OpcoesHeader />
-            <IconesHeader />
-          </Opcoes>
-        </HeaderContainer>
-    )
+function Header() {
+  return (
+    <HeaderContainer>
+      <Logo />
+      <Opcoes>
+        <OpcoesHeader />
+        <IconesHeader />
+      </Opcoes>
+    </HeaderContainer>
+  )
 }
 
 export default Header;

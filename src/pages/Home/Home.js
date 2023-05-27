@@ -7,7 +7,7 @@ function Home() {
     <>
       <Header />
       <Body>
-          <TabelaDeInformacoes />
+        <TabelaDeInformacoes />
       </Body>
     </>
   );

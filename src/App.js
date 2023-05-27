@@ -1,8 +1,8 @@
-import AbrirChamado from './pages/AbrirChamado/AbrirChamado';
-//import Home from './pages/Home/Home';
+//import AbrirChamado from './pages/AbrirChamado/AbrirChamado';
+import Home from './pages/Home/Home';
 import styled from 'styled-components';
 
-const AppContainer = styled.div `
+const AppContainer = styled.div`
   width: 100vw;
   height: 100vh;
   @media (max-width: 768px) {
@@ -14,7 +14,7 @@ const AppContainer = styled.div `
 function App() {
   return (
     <AppContainer>
-      <AbrirChamado/>
+      <Home />
     </AppContainer>
   );
 }

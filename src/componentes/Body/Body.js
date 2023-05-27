@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const Body = styled.div `
+const Body = styled.div`
   width: 100vw;
   height: 100vh;
   background-image: linear-gradient(60deg, #155f206e 5%, #0a53d191 100%);

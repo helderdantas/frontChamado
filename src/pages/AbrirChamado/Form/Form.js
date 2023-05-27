@@ -5,20 +5,20 @@ const FormContainer = styled.div`
   width: 500px;
   margin: auto;
   @media (max-width: 768px) {
-      width: 90%;
-      height: 90%;
+    width: 90%;
+    height: 90%;
   }
 `
 
 const FormStyle = styled.form`
-  padding-top: 2%;
+  padding-top: 30%;
 `
 
 const Label = styled.label`
   font-size: 18px;
   display: flex;
   flex-direction: column;
-  padding-top: 1%;
+  padding-top: 5%;
 `
 
 const Input = styled.input`
@@ -57,8 +57,9 @@ const Button = styled.button`
 `
 
 const Form = () => {
-  const [name, setName] = useState('');
+  const [nome, setName] = useState('');
   const [estacaoTrabalho, setWorkstation] = useState('');
+  const [descricao, setDescription] = useState('');
   const [equipamento, setEquipamento] = useState('');
 
   const handleNameChange = (e) => {
@@ -69,14 +70,19 @@ const Form = () => {
     setWorkstation(e.target.value);
   };
 
+  const handleDescriptionChange = (e) => {
+    setDescription(e.target.value);
+  };
+
   const handleEquipamentoChange = (e) => {
     setEquipamento(e.target.value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Nome:', name);
+    console.log('Nome:', nome);
     console.log('Estação de Trabalho:', estacaoTrabalho);
+    console.log('Descrição:', descricao);
     console.log('Equipamento:', equipamento);
   };
 
@@ -88,7 +94,7 @@ const Form = () => {
           <Input
             type="text"
             id="name"
-            value={name}
+            value={nome}
             onChange={handleNameChange}
           />
         </div>
@@ -99,6 +105,15 @@ const Form = () => {
             id="workstation"
             value={estacaoTrabalho}
             onChange={handleWorkstationChange}
+          />
+        </div>
+        <div>
+          <Label htmlFor="description">Descrição:</Label>
+          <Input
+            type="text"
+            id="description"
+            value={descricao}
+            onChange={handleDescriptionChange}
           />
         </div>
         <div>
@@ -115,7 +130,9 @@ const Form = () => {
             <Option value="Impressora">Impressora</Option>
           </Select>
         </div>
-        <Button type="submit">Solicitar</Button>
+        <center>
+          <Button type="submit">Solicitar</Button>
+        </center>
       </FormStyle>
     </FormContainer>
   );

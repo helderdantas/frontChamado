@@ -5,9 +5,9 @@ import Form from './Form/Form';
 function AbrirChamado() {
     return (
         <>
-            <Header/>
+            <Header />
             <Body>
-                <Form/>
+                <Form />
             </Body>
         </>
     );
