@@ -1,5 +1,4 @@
-//import AbrirChamado from './pages/AbrirChamado/AbrirChamado';
-import Home from './pages/Home/Home';
+import Rotas from './routes/Routes';
 import styled from 'styled-components';
 
 const AppContainer = styled.div`
@@ -14,7 +13,7 @@ const AppContainer = styled.div`
 function App() {
   return (
     <AppContainer>
-      <Home />
+      <Rotas />
     </AppContainer>
   );
 }
