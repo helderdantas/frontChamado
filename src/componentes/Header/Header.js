@@ -22,7 +22,6 @@ function Header() {
     <HeaderContainer>
       <Logo />
       <Opcoes>
-        <OpcoesHeader />
         <IconesHeader />
       </Opcoes>
     </HeaderContainer>

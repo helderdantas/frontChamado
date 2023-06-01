@@ -1,3 +1,5 @@
+import { useNavigate } from 'react-router';
+
 import logo from '../../../imagens/logotipoSeec.png';
 import styled from 'styled-components';
 
@@ -11,6 +13,7 @@ const LogoContainer = styled.div`
 const LogoImage = styled.img`
   width: 125px;
   margin-right: 10px;
+  cursor: pointer;
 `
 
 const LogoText = styled.p`
@@ -19,9 +22,11 @@ const LogoText = styled.p`
 `
 
 function Logo() {
+  const navigate = useNavigate();
   return (
     <LogoContainer>
       <LogoImage
+        onClick={() => navigate('/')}
         src={logo}
         alt='Logo' />
       <LogoText>
