@@ -1,6 +1,6 @@
 import TabelaDeInformacoes from './TabelaDeInformacoes/TabelaDeInformacoes';
-import Header from '../../componentes/Header/Header';
-import Body from '../../componentes/Body/Body';
+import Header from '../../components/Header/Header';
+import Body from '../../components/Body/Body';
 
 function Home() {
   return (

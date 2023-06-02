@@ -1,5 +1,5 @@
-import Header from '../../componentes/Header/Header';
-import Body from '../../componentes/Body/Body';
+import Header from '../../components/Header/Header';
+import Body from '../../components/Body/Body';
 import Form from './Form/Form';
 
 function AbrirChamado() {

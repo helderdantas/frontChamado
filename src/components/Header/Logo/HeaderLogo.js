@@ -1,25 +1,28 @@
 import { useNavigate } from 'react-router';
 
-import logo from '../../../imagens/logotipoSeec.png';
+import logo from '../../../img/logotipoSeec.png';
 import styled from 'styled-components';
 
 const LogoContainer = styled.div`
   display: flex;
   font-size: 25px;
+  align-items: center;
   @media (max-width: 768px) {
     font-size: 20px;
   }
 `
 const LogoImage = styled.img`
-  width: 125px;
+  width: 15%;
   margin-right: 10px;
   cursor: pointer;
+  @media (max-width: 768px) {
+    width: 80px;
+  }
 `
 
 const LogoText = styled.p`
-  text-align: junstify;
-  padding-top: 7%;
-`
+  text-align: center;
+  `
 
 function Logo() {
   const navigate = useNavigate();
