@@ -15,46 +15,68 @@ const FormStyle = styled.form`
 `
 
 const Label = styled.label`
-  font-size: 18px;
+  font-size: 20px;
   display: flex;
   flex-direction: column;
   padding-top: 5%;
-`
+  margin-bottom: 10px;
+`;
 
 const Input = styled.input`
   border-radius: 10px;
-  width: 500px;
-  height: 30px;
+  width: 100%;
+  height: 20px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
   @media (max-width: 768px) {
     width: 90%;
     height: 90%;
   }
-`
+`;
 
 const Select = styled.select`
   border-radius: 10px;
-  width: 500px;
+  width: 103%;
   height: 30px;
-  text-align: center;
+  padding: 5px;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  text-align-last: center;
   @media (max-width: 768px) {
-    width: 90%;
-    height: 90%;
+    width: 95%;
+    height: 95%;
   }
-`
+`;
 
 const Option = styled.option`
-  width: 500px;
+  width: 100%;
   height: 30px;
   font-size: 18px;
-`
+`;
+
+const ButtonContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+  `;
 
 const Button = styled.button`
   text-align: center;
   padding: .6%;
   font-size: 18px;
   border-radius: 10px;
-  margin-top: 2%;
-`
+  margin-top: 10%;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #45a049;
+  }
+`;
 
 const Form = () => {
   const [nome, setName] = useState('');
@@ -90,7 +112,7 @@ const Form = () => {
     <FormContainer>
       <FormStyle onSubmit={handleSubmit}>
         <div>
-          <Label htmlFor="name">Nome:</Label>
+          <Label htmlFor="name">Nome completo:</Label>
           <Input
             type="text"
             id="name"
@@ -99,7 +121,7 @@ const Form = () => {
           />
         </div>
         <div>
-          <Label htmlFor="workstation">Estação de Trabalho:</Label>
+          <Label htmlFor="workstation">Estação de trabalho:</Label>
           <Input
             type="text"
             id="workstation"
@@ -108,7 +130,7 @@ const Form = () => {
           />
         </div>
         <div>
-          <Label htmlFor="description">Descrição:</Label>
+          <Label htmlFor="description">Descrição do problema:</Label>
           <Input
             type="text"
             id="description"
@@ -128,11 +150,11 @@ const Form = () => {
             <Option value="Monitor 1">Monitor 1</Option>
             <Option value="Monitor 2">Monitor 2</Option>
             <Option value="Impressora">Impressora</Option>
-          </Select>
+            </Select>
         </div>
-        <center>
-          <Button type="submit">Solicitar</Button>
-        </center>
+        <ButtonContainer>
+          <Button type="submit">Enviar solicitação</Button>
+        </ButtonContainer>
       </FormStyle>
     </FormContainer>
   );

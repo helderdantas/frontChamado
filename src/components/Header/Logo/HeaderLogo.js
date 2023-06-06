@@ -1,5 +1,4 @@
 import { useNavigate } from 'react-router';
-
 import logo from '../../../img/logotipoSeec.png';
 import styled from 'styled-components';
 
