@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styled from 'styled-components';
+import axios from 'axios';
 
 const FormContainer = styled.div`
   width: 500px;
@@ -83,6 +84,9 @@ const Form = () => {
   const [estacaoTrabalho, setWorkstation] = useState('');
   const [descricao, setDescription] = useState('');
   const [equipamento, setEquipamento] = useState('');
+  const [equipamentotombo, setEquipamentotombo] = useState('');
+  const [equipamentonumeroserie, setEquipamentonumeroserie] = useState('');
+  const [controle, setControle] = useState({});
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -100,13 +104,49 @@ const Form = () => {
     setEquipamento(e.target.value);
   };
 
+  
+  const buscarControle = async function obterControleControlePorId(){
+      try {
+          console.log('entrei')
+          await axios.get(`http://localhost:3030/listarControle/` + estacaoTrabalho).then(response=>{
+            setControle(response.data)
+          })
+  
+      } catch (error) {
+          return error
+
+      }
+  
+  }
+
+  async function criarChamado(){    
+    console.log('imprimir controle')
+    console.log(controle)
+    const body = {
+      nome:nome,
+      setor:controle.setor,
+      subsetor:controle.subsetor,
+      ilha:controle.ilha,
+      estacaotrabalho:estacaoTrabalho,
+      equipamentocomdefeito:equipamento,
+      equipamentotombo:equipamentotombo,
+      equipamentonumeroserie:equipamentonumeroserie,
+      descricao:descricao,
+      equipesuport:"HELDER"
+    }
+    console.log(body)
+    await axios.post("http://localhost:3032/criarChamado/", body).then(response=>{
+      console.log(response.data)
+    });
+         
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Nome:', nome);
-    console.log('Estação de Trabalho:', estacaoTrabalho);
-    console.log('Descrição:', descricao);
-    console.log('Equipamento:', equipamento);
-  };
+    buscarControle();
+    criarChamado()
+     
+  } 
 
   return (
     <FormContainer>
@@ -146,10 +186,10 @@ const Form = () => {
             onChange={handleEquipamentoChange}
           >
             <Option value="">Selecione um equipamento</Option>
-            <Option value="CPU">CPU</Option>
-            <Option value="Monitor 1">Monitor 1</Option>
-            <Option value="Monitor 2">Monitor 2</Option>
-            <Option value="Impressora">Impressora</Option>
+            <Option value="cpu">CPU</Option>
+            <Option value="monitor1">Monitor 1</Option>
+            <Option value="monitor2">Monitor 2</Option>
+            <Option value="impressora">Impressora</Option>
             </Select>
         </div>
         <ButtonContainer>

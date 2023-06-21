@@ -1,5 +1,5 @@
-import { activedirectory } from activedirectory;
-import { dotenv } from dotenv;
+import { activedirectory } from 'activedirectory';
+import { dotenv } from 'dotenv';
 
 dotenv.config();
 

@@ -1,4 +1,7 @@
 import styled from 'styled-components';
+import  React, { useEffect, useState } from 'react';
+
+
 
 const BodyContainer = styled.table`
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.0.15);
@@ -21,16 +24,41 @@ const InformationContainer = styled.tr`
     }
 `
 
-const pivot_table_1 = [
-    { pivot_table_1: 6 },
-    { pivot_table_1: 5 },
-    { pivot_table_1: 30 },
-    { pivot_table_1: 94 },
-    { pivot_table_1: 1 },
-    { pivot_table_1: 0 },
-]
-
 function TabelaDeInformacoes() {
+    const [dados, setDados] = useState([])
+  
+    
+    useEffect(()=>{
+        async function chamadosAberto(){
+           const repos = await fetch("http://localhost:3032/listarChamadosAbertos")
+           const data = await repos.json()
+           setDados(data)
+           console.log(data)            
+        
+        };
+        chamadosAberto();
+        
+    },[])
+
+ 
+    function renderizarDados() {
+        if(dados){
+        return dados?.map((chamado, i) => {
+            return (
+                <InformationContainer>
+                    <CenterContainer>{chamado.id}</CenterContainer>
+                    <CenterContainer>{chamado.nome}</CenterContainer>
+                    <CenterContainer>{chamado.setor}</CenterContainer>
+                    <CenterContainer>{chamado.subsetor}</CenterContainer>
+                    <CenterContainer>{chamado.equipesuport}</CenterContainer>
+                    <CenterContainer>{chamado.status}</CenterContainer>
+                </InformationContainer>
+            )
+
+        })
+    }
+    }
+               
     return (
 
         <BodyContainer>
@@ -43,27 +71,13 @@ function TabelaDeInformacoes() {
                     <CenterContainer>Nome</CenterContainer>
                     <CenterContainer>Setor</CenterContainer>
                     <CenterContainer>Subsetor</CenterContainer>
-                    <CenterContainer>Estação De Trabalho</CenterContainer>
+                    <CenterContainer>Equipe Suporte</CenterContainer>
                     <CenterContainer>Estatus De Atendimento</CenterContainer>
                 </tr>
             </thead>
             <tbody>
-                <InformationContainer>
-                    {pivot_table_1
-                        .sort((a, b) => a.pivot_table_1 - b.pivot_table_1) // Ordena o array com base no valor da propriedade pivot_table_1
-                        .map((obj) => (
-                            <td key={obj.pivot_table_1}>{obj.pivot_table_1}</td>
-                        ))
-                    }
-                </InformationContainer>
-                <InformationContainer>
-                    {pivot_table_1
-                        .sort((a, b) => b.pivot_table_1 - a.pivot_table_1) // Ordena o array com base no valor da propriedade pivot_table_1
-                        .map((obj) => (
-                            <td key={obj.pivot_table_1}>{obj.pivot_table_1}</td>
-                        ))
-                    }
-                </InformationContainer>
+                {renderizarDados()}           
+            
             </tbody>
         </BodyContainer>
 
