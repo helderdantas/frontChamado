@@ -67,12 +67,11 @@ function TabelaDeInformacoes() {
                     <CenterContainer colSpan={6}>CHAMADOS</CenterContainer>
                 </tr>
                 <tr>
-                    <CenterContainer>Código</CenterContainer>
                     <CenterContainer>Nome</CenterContainer>
                     <CenterContainer>Setor</CenterContainer>
                     <CenterContainer>Subsetor</CenterContainer>
-                    <CenterContainer>Equipe Suporte</CenterContainer>
-                    <CenterContainer>Estatus De Atendimento</CenterContainer>
+                    <CenterContainer>Status</CenterContainer>
+                    <CenterContainer>Ação</CenterContainer>
                 </tr>
             </thead>
             <tbody>

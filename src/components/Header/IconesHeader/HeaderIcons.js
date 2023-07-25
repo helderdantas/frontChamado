@@ -20,7 +20,7 @@ const DropdownImg = styled.img`
 `;
 
 const DropdownConteudo = styled.div`
-  display: ${(props) => (props.show ? 'block' : 'none')};
+  display: ${(props) => (JSON.parse(props.show) ? 'block' : 'none')};
   position: absolute;
   background-color: #f9f9f9;
   min-width: 140px;
@@ -60,7 +60,7 @@ const DropdownMenu = () => {
   return (
     <Dropdown>
       <DropdownImg src={perfil} alt="perfil" onClick={alternarDropdown} />
-      <DropdownConteudo show={mostrarDropdown}>
+      <DropdownConteudo show={mostrarDropdown ? "true" : "false"}>
         <DropdownLink href="#">Login Suporte</DropdownLink>
       </DropdownConteudo>
     </Dropdown>

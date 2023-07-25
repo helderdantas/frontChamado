@@ -84,8 +84,6 @@ const Form = () => {
   const [estacaoTrabalho, setWorkstation] = useState('');
   const [descricao, setDescription] = useState('');
   const [equipamento, setEquipamento] = useState('');
-  const [equipamentotombo, setEquipamentotombo] = useState('');
-  const [equipamentonumeroserie, setEquipamentonumeroserie] = useState('');
   const [controle, setControle] = useState({});
 
   const buscarControle = async function obterControleControlePorId(){
@@ -96,7 +94,7 @@ const Form = () => {
     } catch (error) {
       console.error(error);
     }
-
+  
   }
 
   const handleNameChange = (e) => {
@@ -119,7 +117,7 @@ const Form = () => {
   async function criarChamado() {
     console.log('imprimir controle');
     console.log(controle);
-
+    
     // Certifique-se de que o controle está definido antes de continuar
     if (controle) {
       const body = {
@@ -129,33 +127,34 @@ const Form = () => {
         ilha: controle.ilha,
         estacaotrabalho: estacaoTrabalho,
         equipamentocomdefeito: equipamento,
+        /* equipamentotombo: equipamentotombo,
+        equipamentonumeroserie: equipamentonumeroserie, */
         descricao: descricao,
         equipesuport: ""
       };
 
+
       if ( equipamento === "cpu" ) {
         body.equipamentotombo = controle.cputombo;
         body.equipamentonumeroserie = controle.cpunumeroserie;
-      }
-      else if ( equipamento === "monitor1" ) {
+      } else if ( equipamento === "monitor1" ) {
         body.equipamentotombo = controle.monitor1tombo;
         body.equipamentonumeroserie = controle.monitor1numeroserie;
-      }
-      else if ( equipamento === "monitor2" ) {
+      } else if ( equipamento === "monitor2" ) {
         body.equipamentotombo = controle.monitor2tombo;
         body.equipamentonumeroserie = controle.monitor2numeroserie;
-      }
-      else if ( equipamento === "impressora" ) {
+      } else if ( equipamento === "impressora" ) {
         body.equipamentotombo = controle.impressoratombo;
         body.equipamentonumeroserie = "-----------------";
       }
-
+  
       console.log(body);
-
+      
       try {
         const response = await axios.post("http://localhost:3032/criarChamado/", body);
         console.log(response.data);
-      } catch (error) {
+      }
+      catch (error) {
         console.error(error);
       }
     }
@@ -163,9 +162,9 @@ const Form = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    criarChamado()
-  } 
-
+    criarChamado();
+  }
+  
   return (
     <FormContainer>
       <FormStyle onSubmit={handleSubmit}>
@@ -197,7 +196,7 @@ const Form = () => {
           />
         </div>
         <div>
-          <Label htmlFor="equipamento">Equipamento:</Label>
+          <Label htmlFor="equipamento" >Equipamento:</Label>
           <Select
             id="equipamento"
             value={equipamento}
