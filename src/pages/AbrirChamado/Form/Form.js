@@ -127,8 +127,6 @@ const Form = () => {
         ilha: controle.ilha,
         estacaotrabalho: estacaoTrabalho,
         equipamentocomdefeito: equipamento,
-        /* equipamentotombo: equipamentotombo,
-        equipamentonumeroserie: equipamentonumeroserie, */
         descricao: descricao,
         equipesuport: ""
       };

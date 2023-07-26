@@ -60,7 +60,7 @@ const DropdownMenu = () => {
   return (
     <Dropdown>
       <DropdownImg src={perfil} alt="perfil" onClick={alternarDropdown} />
-      <DropdownConteudo show={mostrarDropdown ? "true" : "false"}>
+      <DropdownConteudo show={JSON.parse(mostrarDropdown) ? "true" : "false"}>
         <DropdownLink href="#">Login Suporte</DropdownLink>
       </DropdownConteudo>
     </Dropdown>
