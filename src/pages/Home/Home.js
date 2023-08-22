@@ -1,16 +1,12 @@
-import TabelaDeInformacoes from './TabelaDeInformacoes/TabelaDeInformacoes';
-import Header from '../../components/Header/Header';
+import Cards from './Cards/Cards';
 import Body from '../../components/Body/Body';
 
 function Home() {
-  return (
-    <>
-      <Header />
-      <Body>
-        <TabelaDeInformacoes />
-      </Body>
-    </>
-  );
+    return (
+        <Body>
+            <Cards />
+        </Body>
+    );
 }
 
 export default Home;
